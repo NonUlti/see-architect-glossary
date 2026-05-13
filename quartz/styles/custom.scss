@@ -1,3 +1,100 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// ─── 용어 테이블 가독성 개선 ──────────────────────────────────
+// 모든 용어집 챕터의 컴팩트 표 4컬럼 형식 가정:
+// 용어 | 정의 | 태그 | 상세
+
+article table {
+  table-layout: auto;
+  width: 100%;
+  font-size: 0.92rem;
+  border-collapse: collapse;
+
+  // 헤더 — 옅은 강조
+  thead th {
+    background: var(--lightgray);
+    font-weight: 600;
+    text-align: left;
+    padding: 0.55rem 0.7rem;
+    border-bottom: 2px solid var(--gray);
+  }
+
+  // 본문 셀
+  tbody td {
+    padding: 0.5rem 0.7rem;
+    vertical-align: top;
+    line-height: 1.5;
+    border-bottom: 1px solid var(--lightgray);
+  }
+
+  // 줄무늬 (zebra)
+  tbody tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.018);
+  }
+
+  :root[saved-theme="dark"] & tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.025);
+  }
+
+  // hover — 행 강조
+  tbody tr:hover {
+    background: var(--highlight);
+  }
+
+  // 첫 컬럼 (용어) — 굵게 + 약간 큰 글자
+  tbody td:first-child {
+    font-weight: 600;
+    color: var(--secondary);
+    white-space: nowrap;
+    word-break: keep-all;
+  }
+
+  // 두 번째 컬럼 (정의) — 가장 넓게
+  tbody td:nth-child(2) {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  // 세 번째 컬럼 (태그) — 컴팩트, 줄바꿈 허용
+  tbody td:nth-child(3) {
+    font-family: var(--codeFont, monospace);
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: var(--darkgray);
+    white-space: normal;
+    word-break: keep-all;
+    min-width: 8rem;
+    max-width: 14rem;
+  }
+
+  // 네 번째 컬럼 (상세 링크) — 좁게
+  tbody td:nth-child(4) {
+    text-align: center;
+    white-space: nowrap;
+    min-width: 2.5rem;
+  }
+
+  // 모바일 — 태그 글자 더 작게
+  @media (max-width: 700px) {
+    font-size: 0.85rem;
+    thead th,
+    tbody td {
+      padding: 0.4rem 0.5rem;
+    }
+    tbody td:nth-child(3) {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+// 태그 칩 스타일은 마크다운에서 `#개념:돈 #단계:실행` 형식의 평문 텍스트라
+// inline 변환이 어려움. CSS-only는 위 컬럼 스타일까지만. 추가로 인라인
+// 코드(`#tag`) 형태를 chip처럼 보이게 일반 inline code 스타일도 손질:
+article :not(pre) > code {
+  font-family: var(--codeFont, monospace);
+  font-size: 0.85em;
+  padding: 0.12em 0.45em;
+  border-radius: 0.35em;
+  background: var(--lightgray);
+  color: var(--darkgray);
+}
