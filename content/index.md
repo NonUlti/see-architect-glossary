@@ -1,3 +1,7 @@
+---
+title: 시건축 Ubiquitous Language
+---
+
 # Ubiquitous Language — Index
 
 > 이 문서집은 `see-architect-system` 프로젝트에서 사용하는 건축 도메인 용어를
