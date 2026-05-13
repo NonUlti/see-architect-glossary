@@ -8,25 +8,25 @@ title: 시건축 Ubiquitous Language
 > 한 곳에 정리한 것이다. 회의·문서·코드에서 같은 단어가 같은 의미로 쓰이도록
 > 하기 위한 공통 약속.
 >
-
+> 스펙: [`docs/superpowers/specs/2026-05-12-ubiquitous-language-design.md`](../superpowers/specs/2026-05-12-ubiquitous-language-design.md)
 
 ## 도메인 챕터
 
 | 챕터 | 내용 | 표 행 / 상세 |
 |---|---|---|
-| [01-actors](./01-actors.md) | 사람·조직 (발주자·시공사·하청·현장소장) | 17 / 3 |
+| [01-actors](./01-actors.md) | 사람·조직 (발주자·원도급사·하도급사·현장소장) | 13 / 4 |
 | [02-trades](./02-trades.md) | 공종 분류 체계 (가설·철콘·마감·설비) | 40 / 7 |
-| [03-money](./03-money.md) | 금액 개념 (내역서·계약·실행·기성·유보 등) — 가장 큰 챕터 | 111 / 21 |
-| [04-documents](./04-documents.md) | 문서 종류 (견적서·내역서·지급내역서·기성청구서) | 64 / 8 |
-| [05-progress](./05-progress.md) | 진행률·실행율 등 진행도 개념 | 7 / 2 |
+| [03-money](./03-money.md) | 금액 개념 (원도급금액·하도급금액·실행·기성·유보 등) — 가장 큰 챕터 | 111 / 21 |
+| [04-documents](./04-documents.md) | 문서 종류 (견적서·내역서·지급내역서·기성청구서) | 20 / 8 |
+| [05-progress](./05-progress.md) | 진행률·실행율 등 진행도 개념 | 5 / 2 |
 | [06-project](./06-project.md) | 현장·프로젝트 메타데이터 (현장명·사업기간·규모) | 6 / 2 |
-| [00-conflicts](./00-conflicts.md) | 충돌 누적 (업계 vs MVP) | 7 conflicts |
+| [00-conflicts](./00-conflicts.md) | 충돌 누적 (업계 vs MVP) | 8 conflicts |
 
-**합계**: 표 행 245개 · 상세 섹션 43개 (6개 도메인 챕터 기준)
+**합계**: 표 행 195개 · 상세 섹션 44개 (6개 도메인 챕터 기준)
 
 ## 태그 마스터 리스트
 
-태그는 4개 prefix 계열을 사용. **prefix 없는 태그는 사용하지 않는다.**
+태그는 5개 prefix 계열을 사용. **prefix 없는 태그는 사용하지 않는다.**
 
 ### `#개념:X` — 무엇에 관한 용어인가
 - `#개념:돈` `#개념:사람` `#개념:공종` `#개념:문서` `#개념:진행` `#개념:일정`
@@ -42,6 +42,9 @@ title: 시건축 Ubiquitous Language
 - `#주의:mvp고유` — MVP에만 있는 개념, 업계 표준 없음
 - `#주의:혼동주의` — 비슷한 다른 용어와 자주 혼동
 - `#주의:용어다양` — 업계에서 여러 이름으로 부름
+
+### `#범위:참고용` — 산업 표준 reference이나 시스템 구현 범위 밖
+- 시스템에서 직접 구현하지 않는 항목. 삭제하지 않고 참고용으로 유지.
 
 ## 출처 약어
 
@@ -62,12 +65,12 @@ title: 시건축 Ubiquitous Language
 용어가 어느 시점에 등장하는지 흐름으로 보고 싶을 때.
 
 ### 1. 견적/입찰
-[[04-documents#견적서-estimate--quotation|견적서]] · [[04-documents#내역서-bill-of-quantities|내역서]] · [[03-money#내역서금액-estimate-amount|내역서금액]] · [[02-trades#공종|공종]]
+[[04-documents#견적서-estimate--quotation|견적서]] · [[04-documents#내역서-bill-of-quantities|내역서]] · [[03-money#원도급금액-prime-contract-amount|원도급금액]] · [[02-trades#공종|공종]]
 
 ↓
 
 ### 2. 계약
-[[03-money#계약금액-contract-amount|계약금액]] · [[03-money#선급금-advance-payment|선급금]] · 도급계약 · 변경계약 (cf. [[01-actors#하청업체-subcontractor|하청업체]], [[04-documents#내역서-bill-of-quantities|내역서]])
+[[03-money#하도급금액-subcontract-amount|하도급금액]] · [[03-money#선급금-advance-payment|선급금(참고용)]] · 도급계약 · 변경계약 (cf. [[01-actors#하도급사-subcontractor|하도급사]], [[04-documents#내역서-bill-of-quantities|내역서]])
 
 ↓
 
@@ -95,4 +98,5 @@ title: 시건축 Ubiquitous Language
 
 ---
 
-**Phase 1 + Phase 2 완료** — 2026-05-13
+**Phase 1 + Phase 2 완료** — 2026-05-13  
+**Phase 3 완료 (원도급/하도급 관점 rename + 동의어 컬럼 + 범위:참고용 태그)** — 2026-05-13

@@ -1,8 +1,8 @@
 @use "./base.scss";
 
 // ─── 용어 테이블 가독성 개선 ──────────────────────────────────
-// 모든 용어집 챕터의 컴팩트 표 4컬럼 형식 가정:
-// 용어 | 정의 | 태그 | 상세
+// 모든 용어집 챕터의 컴팩트 표 5컬럼 형식 가정:
+// 용어 | 정의 | 동의어 | 태그 | 상세
 
 article table {
   table-layout: auto;
@@ -55,8 +55,17 @@ article table {
     overflow-wrap: anywhere;
   }
 
-  // 세 번째 컬럼 (태그) — 컴팩트, 줄바꿈 허용
+  // 세 번째 컬럼 (동의어) — 작게, 회색
   tbody td:nth-child(3) {
+    font-size: 0.86rem;
+    color: var(--gray);
+    word-break: keep-all;
+    min-width: 6rem;
+    max-width: 12rem;
+  }
+
+  // 네 번째 컬럼 (태그) — 컴팩트, 줄바꿈 허용
+  tbody td:nth-child(4) {
     font-family: var(--codeFont, monospace);
     font-size: 0.78rem;
     line-height: 1.7;
@@ -67,8 +76,8 @@ article table {
     max-width: 14rem;
   }
 
-  // 네 번째 컬럼 (상세 링크) — 좁게
-  tbody td:nth-child(4) {
+  // 다섯 번째 컬럼 (상세 링크) — 좁게
+  tbody td:nth-child(5) {
     text-align: center;
     white-space: nowrap;
     min-width: 2.5rem;
@@ -82,6 +91,9 @@ article table {
       padding: 0.4rem 0.5rem;
     }
     tbody td:nth-child(3) {
+      font-size: 0.75rem;
+    }
+    tbody td:nth-child(4) {
       font-size: 0.7rem;
     }
   }
