@@ -1,9 +1,6 @@
 @use "./base.scss";
 
-// ─── 용어 테이블 가독성 개선 ──────────────────────────────────
-// 모든 용어집 챕터의 컴팩트 표 5컬럼 형식 가정:
-// 용어 | 정의 | 동의어 | 태그 | 상세
-
+// ─── 표 공통 스타일 (모든 표에 적용) ─────────────────────────
 article table {
   table-layout: auto;
   width: 100%;
@@ -41,21 +38,44 @@ article table {
     background: var(--highlight);
   }
 
-  // 첫 컬럼 (용어) — 굵게 + 약간 큰 글자
-  tbody td:first-child {
+  // 모바일 — 글자 살짝 축소
+  @media (max-width: 700px) {
+    font-size: 0.85rem;
+    thead th,
+    tbody td {
+      padding: 0.4rem 0.5rem;
+    }
+  }
+}
+
+// ─── 용어집 5컬럼 표 전용 스타일 ─────────────────────────────
+// 5컬럼인 표(thead의 th 5번째가 존재)에만 컬럼별 스타일 적용.
+// 상세 풀이 안의 비교 표(3~4컬럼)는 영향 받지 않음.
+article table:has(thead tr > th:nth-child(5)) {
+  // 1. 용어 — 굵게, 강조 색, nowrap
+  thead th:nth-child(1) {
+    text-align: left;
+  }
+  tbody td:nth-child(1) {
     font-weight: 600;
     color: var(--secondary);
     white-space: nowrap;
     word-break: keep-all;
   }
 
-  // 두 번째 컬럼 (정의) — 가장 넓게
+  // 2. 정의 — 가장 넓게, 한국어 wrap
+  thead th:nth-child(2) {
+    text-align: left;
+  }
   tbody td:nth-child(2) {
     word-break: keep-all;
     overflow-wrap: anywhere;
   }
 
-  // 세 번째 컬럼 (동의어) — 작게, 회색
+  // 3. 동의어 — 작게, 회색
+  thead th:nth-child(3) {
+    text-align: left;
+  }
   tbody td:nth-child(3) {
     font-size: 0.86rem;
     color: var(--gray);
@@ -64,7 +84,10 @@ article table {
     max-width: 12rem;
   }
 
-  // 네 번째 컬럼 (태그) — 컴팩트, 줄바꿈 허용
+  // 4. 태그 — mono, 더 작게
+  thead th:nth-child(4) {
+    text-align: left;
+  }
   tbody td:nth-child(4) {
     font-family: var(--codeFont, monospace);
     font-size: 0.78rem;
@@ -76,20 +99,17 @@ article table {
     max-width: 14rem;
   }
 
-  // 다섯 번째 컬럼 (상세 링크) — 좁게
+  // 5. 상세 — 가운데 정렬 (헤더·본문 둘 다)
+  thead th:nth-child(5) {
+    text-align: center;
+  }
   tbody td:nth-child(5) {
     text-align: center;
     white-space: nowrap;
-    min-width: 2.5rem;
+    min-width: 3rem;
   }
 
-  // 모바일 — 태그 글자 더 작게
   @media (max-width: 700px) {
-    font-size: 0.85rem;
-    thead th,
-    tbody td {
-      padding: 0.4rem 0.5rem;
-    }
     tbody td:nth-child(3) {
       font-size: 0.75rem;
     }
@@ -99,9 +119,8 @@ article table {
   }
 }
 
-// 태그 칩 스타일은 마크다운에서 `#개념:돈 #단계:실행` 형식의 평문 텍스트라
-// inline 변환이 어려움. CSS-only는 위 컬럼 스타일까지만. 추가로 인라인
-// 코드(`#tag`) 형태를 chip처럼 보이게 일반 inline code 스타일도 손질:
+// ─── 인라인 코드 칩 ─────────────────────────────────────────
+// `#개념:돈` 같이 inline code로 쓰인 태그를 chip처럼 보이게
 article :not(pre) > code {
   font-family: var(--codeFont, monospace);
   font-size: 0.85em;
