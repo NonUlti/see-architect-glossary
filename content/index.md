@@ -65,27 +65,27 @@ title: 시건축 Ubiquitous Language
 용어가 어느 시점에 등장하는지 흐름으로 보고 싶을 때.
 
 ### 1. 견적/입찰
-[[04-documents#견적서-estimate--quotation|견적서]] · [[04-documents#내역서-bill-of-quantities|내역서]] · [[03-money#원도급금액-prime-contract-amount|원도급금액]] · [[02-trades#공종|공종]]
+[[04-documents#견적서|견적서]] · [[04-documents#내역서|내역서]] · [[03-money#원도급금액|원도급금액]] · [[02-trades#공종|공종]]
 
 ↓
 
 ### 2. 계약
-[[03-money#하도급금액-subcontract-amount|하도급금액]] · [[03-money#선급금-advance-payment|선급금(참고용)]] · 도급계약 · 변경계약 (cf. [[01-actors#하도급사-subcontractor|하도급사]], [[04-documents#내역서-bill-of-quantities|내역서]])
+[[03-money#하도급금액|하도급금액]] · [[03-money#선급금|선급금(참고용)]] · 도급계약 · 변경계약 (cf. [[01-actors#하도급사|하도급사]], [[04-documents#내역서|내역서]])
 
 ↓
 
 ### 3. 실행
-[[03-money#직접비-direct-cost|직접비]] · [[03-money#간접비-indirect-cost|간접비]] · [[03-money#현장경비-site-overhead|현장경비]] · [[03-money#예상실행금액-expected-amount|예상실행금액]] · 현장소장 집행
+[[03-money#직접비|직접비]] · [[03-money#간접비|간접비]] · [[03-money#현장경비|현장경비]] · [[03-money#예상실행금액|예상실행금액]] · 현장소장 집행
 
 ↓
 
 ### 4. 지급/정산
-[[04-documents#지급내역서-payment-statement|지급내역서]] · [[04-documents#기성청구서-progress-billing-document|기성청구서]] · [[03-money#기성-progress-payment|기성]] · [[03-money#유보금-retainage--retention|유보금]] · [[03-money#차수-roundinstallment|차수]]
+[[04-documents#지급내역서|지급내역서]] · [[04-documents#기성청구서|기성청구서]] · [[03-money#기성|기성]] · [[03-money#유보금|유보금]] · [[03-money#차수|차수]]
 
 ↓
 
 ### 5. 측정·관리
-[[05-progress#진행률-schedule-progress|진행률]] ⚠️ · [[03-money#실행율-cost-execution-ratio|실행율]] ⚠️ · [[05-progress#공정율-construction-progress-rate|공정율]] · [[03-money#마진-margin|마진]] · [[04-documents#건축공정확인서|건축공정확인서]] (감리 확인용)
+[[05-progress#진행률|진행률]] ⚠️ · [[03-money#실행율|실행율]] ⚠️ · [[05-progress#공정율|공정율]] · [[03-money#마진|마진]] · [[04-documents#건축공정확인서|건축공정확인서]] (감리 확인용)
 
 > ⚠️ 표시 용어는 업계·MVP 간 정의 충돌 있음 → [00-conflicts](./00-conflicts.md) 참조
 
