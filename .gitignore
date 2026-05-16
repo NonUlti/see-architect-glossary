@@ -6,3 +6,11 @@ tsconfig.tsbuildinfo
 .obsidian
 .quartz-cache
 private/
+
+# Python (extraction scripts)
+scripts/__pycache__/
+scripts/.pytest_cache/
+scripts/*.pyc
+
+# Specs / plans — 의도적 untracked (사용자 정책)
+docs/superpowers/
