@@ -4,11 +4,9 @@ title: 시건축 Ubiquitous Language
 
 # Ubiquitous Language — Index
 
-> 이 문서집은 `see-architect-system` 프로젝트에서 사용하는 건축 도메인 용어를
+> 시건축(See Architects) 프로젝트에서 사용하는 건축 도메인 용어를
 > 한 곳에 정리한 것이다. 회의·문서·코드에서 같은 단어가 같은 의미로 쓰이도록
 > 하기 위한 공통 약속.
->
-> 스펙: [`docs/superpowers/specs/2026-05-12-ubiquitous-language-design.md`](../superpowers/specs/2026-05-12-ubiquitous-language-design.md)
 
 ## 도메인 챕터
 
