@@ -1,5 +1,7 @@
 ---
 title: 03. 금액 개념
+status: stable
+last_updated: 2026-05-21
 ---
 
 # 03. Money — 금액 개념

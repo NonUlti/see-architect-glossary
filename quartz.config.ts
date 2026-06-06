@@ -17,7 +17,7 @@ const config: QuartzConfig = {
     },
     locale: "ko-KR",
     baseUrl: "nonulti.github.io/see-architect-glossary",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    ignorePatterns: ["private", "templates", ".obsidian", "notes", "notes/**"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",

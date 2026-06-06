@@ -1,5 +1,7 @@
 ---
 title: 02. 공종 분류
+status: stable
+last_updated: 2026-05-21
 ---
 
 # 02. Trades — 공종 분류 체계

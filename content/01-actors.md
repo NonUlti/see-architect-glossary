@@ -1,5 +1,7 @@
 ---
 title: 01. 사람·조직
+status: stable
+last_updated: 2026-05-21
 ---
 
 # 01. Actors — 사람·조직

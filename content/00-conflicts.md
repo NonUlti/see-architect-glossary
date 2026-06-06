@@ -1,5 +1,7 @@
 ---
 title: 충돌 — 업계 vs MVP
+status: stable
+last_updated: 2026-05-21
 ---
 
 # 충돌 — 업계 표준 vs MVP vs 다른 출처

@@ -1,5 +1,7 @@
 ---
 title: 시건축 Ubiquitous Language
+status: stable
+last_updated: 2026-05-21
 ---
 
 # Ubiquitous Language — Index

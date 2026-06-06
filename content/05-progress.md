@@ -1,5 +1,7 @@
 ---
 title: 05. 진행도
+status: stable
+last_updated: 2026-05-21
 ---
 
 # 05. Progress — 진행도

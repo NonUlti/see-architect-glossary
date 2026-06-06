@@ -1,5 +1,7 @@
 ---
 title: 06. 현장·프로젝트
+status: stable
+last_updated: 2026-05-21
 ---
 
 # 06. Project — 현장·프로젝트 컨텍스트

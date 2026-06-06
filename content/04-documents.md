@@ -1,5 +1,7 @@
 ---
 title: 04. 문서 종류
+status: stable
+last_updated: 2026-05-21
 ---
 
 # 04. Documents — 문서 종류
